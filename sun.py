@@ -3,14 +3,13 @@
 import pyowm
 from datetime import datetime, timezone
 
-owm = pyowm.OWM(os.getenv("OWM_TOKEN"))
-
 import os
 import telegram
 from dotenv import load_dotenv
 load_dotenv()
 bot = telegram.Bot(os.getenv("TELEGRAM_BOT_ID"))
 chat_id = os.getenv("TELEGRAM_CHAT_ID")
+owm = pyowm.OWM(os.getenv("OWM_TOKEN"))
 
 
 def sun():
