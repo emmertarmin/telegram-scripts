@@ -7,15 +7,14 @@ from dotenv import load_dotenv
 load_dotenv()
 bot = telegram.Bot(os.getenv("TELEGRAM_BOT_ID"))
 chat_id = os.getenv("TELEGRAM_CHAT_ID")
-
+daylio = os.getenv("DAYLIO_PATH") #wherever you saved your daylio_export.csv file on your computer
 
 def main():
     today = date.today()
     y = str(int(today.strftime("%Y"))-1)
     y += "-" + today.strftime("%m-%d")
     entries = []
-    #with open("daylio_export.csv", encoding="utf8") as csv_file:
-    with open(os.path.join(os.path.dirname(__file__),"daylio_export.csv"), encoding="utf8") as csv_file:
+    with open(os.path.join(os.path.dirname(__file__),daylio), encoding="utf8") as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         line_count = 0
         for row in csv_reader:

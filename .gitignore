@@ -2,3 +2,5 @@
 *.bat
 *.db
 fronius.py
+geckodriver.log
+*.csv
