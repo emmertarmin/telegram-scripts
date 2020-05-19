@@ -30,6 +30,7 @@ def main():
         bot.send_message(chat_id, text=obj["alt"])
     else:
         last = num
+        # I desperately want to avoid getting in an infinite loop while checking for unsent xkcd files, so I'll just simply give up at the hundredth try.
         for i in range(100):
             num = random.randint(0, last)
             if not xkcd_is_in_db(num):
@@ -44,6 +45,6 @@ def main():
         if not xkcd_is_in_db(num):
             f.write(str(num) + "\n")
 
-            
+
 if __name__ == "__main__":
     main()
