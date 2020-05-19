@@ -12,7 +12,7 @@ chat_id = os.getenv("TELEGRAM_CHAT_ID")
 owm = pyowm.OWM(os.getenv("OWM_TOKEN"))
 
 
-def sun():
+def main():
     if not owm.is_API_online():
         bot.send_message(chat_id, text='OWM is offline')
         return
@@ -23,5 +23,6 @@ def sun():
     msg = 'Sunrise: %02d:%02d\nSunset: %02d:%02d' % (sunrise.hour, sunrise.minute, sunset.hour, sunset.minute)
     bot.send_message(chat_id, text=msg)
 
-sun()
+if __name__ == "__main__":
+    main()
 
