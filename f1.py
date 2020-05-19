@@ -1,9 +1,9 @@
-import telegram
 from requests import get
 from datetime import datetime, timezone
+
+
 import os
-
-
+import telegram
 from dotenv import load_dotenv
 load_dotenv()
 bot = telegram.Bot(os.getenv("TELEGRAM_BOT_ID"))

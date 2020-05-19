@@ -1,8 +1,10 @@
 import json
 from requests import get
 import random
-import telegram
+
+
 import os
+import telegram
 from dotenv import load_dotenv
 load_dotenv()
 bot = telegram.Bot(os.getenv("TELEGRAM_BOT_ID"))
