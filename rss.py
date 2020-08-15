@@ -93,15 +93,21 @@ def podcast(url):
             for item in feed.entries:
                 # if post is already in the database, skip it
                 title = clean(item.title)
+                if "|" in title:
+                    title = title.split("|")[1]
                 if post_is_in_db_with_old_timestamp(title):
                     continue
                 posts_to_print.append(title)
                 desc = BeautifulSoup(item.description, "lxml")
+                if key in ['Books with literal titles']:
+                    amazonLink = desc.find('a')
+                    amazonLink.extract()
                 if desc.find('p'):
                     desc = desc.findAll('p')[0].get_text()
                 else:
                     desc = desc.get_text()
                 desc = esc(desc)
+                desc = desc.strip()
                 #Some of the RSS feeds I'm tracking are not like the others, so now I need to correct fot that
                 msg += chr(187) + ' ' + '*' + channel_title + '* '
                 if key in ['Beyond Victory','Reply All','Waveform','The Hacker Factor Blog']:
@@ -142,8 +148,8 @@ url["reddit"] = {
 url["podcast"] = json.loads(os.getenv("PODCAST_RSS_URL"))
 
 def main():
-    #reddit(url['reddit'])
-    podcast(url['podcast'])
+    #reddit(url["reddit"])
+    podcast(url["podcast"])
 
 if __name__ == "__main__":
     main()
