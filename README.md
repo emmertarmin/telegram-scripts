@@ -4,7 +4,7 @@ This is my Python Telegram Bot, that I run inside a Docker Container on a Raspbe
 
 The python files can be called from the command line individually, as well as through Telegram via the `status_bot.py` file, both with arguments too. [See examples](#example-usage).
 
-Before running it the first time, you need to fill `.env-example` with your own tokens, rename it to `.env`, and create the `db` folder with a few empty files inside. More on this [here](#setting-up-the-project).
+More on how to set up the project [here](#setting-up-the-project).
 
 ## Example usage:
 
@@ -32,7 +32,9 @@ Diesel: €1.329, 462Ft
 ```
 ## Setting up the project
 
-You'll have to create a `db` folder with database files (empty text files). The folder structure looks approximately like this:
+Before running it the first time, you need to fill `.env-example` with your own tokens, rename it to `.env`.
+
+You also need to create the `db` folder with a few database files (empty text files). The folder structure looks approximately like this:
 
 ```
 |   .dockerignore
