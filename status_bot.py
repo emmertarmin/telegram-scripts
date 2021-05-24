@@ -10,13 +10,13 @@ load_dotenv()
 bot = telegram.Bot(os.getenv("TELEGRAM_BOT_ID"))
 chat_id = os.getenv("TELEGRAM_CHAT_ID")
 
-# my own functions
+# my own python files and functions
 import covid
-import daylio
+import daylio # My python file that tells me what I wrote in my daylio calendar a year ago. Remove if not needed
 import f1
 import fuel
 import rate
-import rss
+import rss # My python file that fetches podcast and blog updates. Remove if not needed
 import sun
 import xkcd
 

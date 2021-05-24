@@ -32,7 +32,7 @@ Diesel: €1.329, 462Ft
 ```
 ## Setting up the project
 
-Before running it the first time, you need to fill `.env-example` with your own tokens, rename it to `.env`.
+Before running it the first time, you need to fill `.env-example` with your own tokens, and rename it to `.env`.
 
 You also need to create the `db` folder with a few database files (empty text files). The folder structure looks approximately like this:
 
