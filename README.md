@@ -1,8 +1,8 @@
 # Python Telegram Bot
 
-This is my Python Telegram bot, that I run inside a Docker Container on a Raspberry Pi.
+This is my Python Telegram Bot, that I run inside a Docker Container on a Raspberry Pi. It is based on some examples in the [Python Telegram Bot](https://github.com/python-telegram-bot/python-telegram-bot) library.
 
-The python files can be called from the command line as well as through Telegram via the `status_bot.py` file, including arguments. [See examples](#example-usage).
+The python files can be called from the command line individually, as well as through Telegram via the `status_bot.py` file, both with arguments too. [See examples](#example-usage).
 
 Before running it the first time, you need to fill `.env-example` with your own tokens, rename it to `.env`, and create the `db` folder with a few empty files inside. More on this [here](#setting-up-the-project).
 
