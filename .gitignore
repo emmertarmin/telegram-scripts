@@ -1,0 +1,6 @@
+__pycache__/
+TODO.txt
+.env
+db/
+daylio.py
+rss.py

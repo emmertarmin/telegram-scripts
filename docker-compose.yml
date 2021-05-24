@@ -1,0 +1,7 @@
+services:
+    web:
+        container_name: telegram-bot
+        build: .
+        volumes:
+            - ./db:/db
+        network_mode: "host"
